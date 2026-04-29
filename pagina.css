@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* barra superior */
+.header{
+    font-family: 'Montserrat', sans-serif;
+    background-color:#000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5%;
+}
+
+.header a{
+     text-decoration: none;
+     color:#ffffff;
+     font-size: 25px;
+}
+
+
+
+.barra {
+    display: flex;
+    gap: 50px; 
+}
+
+
+
+
+
+.b1  a:hover {
+  padding: 8px;
+  border-radius: 30px; /* cantos arredondados */
+  background: #ffffff; /* cor de fundo */
+  box-shadow: 0 0 40px #ffffff;
+  color:#000000;
+  transition: all 0.3s ease;
+}
+
+
+.b2  a:hover {
+  padding: 8px;
+  border-radius: 30px; /* cantos arredondados */
+  background: #ffffff; /* cor de fundo */
+  box-shadow: 0 0 40px #ffffff;
+  color:#000000;
+  transition: all 0.3s ease;
+}
+
+
+.user a {
+    color: white;
+    font-size: 22px;
+}
+
+.user i:hover {
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 40px #ffffff;
+    padding: 8px;
+     border-radius: 99px;
+     background: #ffffff;
+}
+
+
+
+.logo img {
+     width: 30%;
+}
+
+
+
+/* pagina principal */
+
+.home{
+    min-height: 100vh;
+     height: 600px;
+     width: 100%;
+     position: relative;
+     background-position: center;
+     overflow: hidden;
+     background-image:url("fundo.jpg") ;
+     background-size: cover; /* 👈 ESSENCIAL */
+}
+
+
+.conteudo{
+     position: relative;
+     padding-left: 900px;
+     top: 80px;  
+    
+ 
+}
+
+.titulo{
+font-family: 'Montserrat', sans-serif;
+     font-weight: 900;
+     font-size: 100px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     color: #ffffff;
+}
+
+.conteudo p{
+     font-family: 'Montserrat', sans-serif;
+     max-width: 950px;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #d1d3d5;
+    margin-top: 10px;
+    padding-left: 90px;
+}
+
+
+
+/* resto da pagina */
+
+.sobre{
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar linha */
+  padding: 40px;
+  background: #41484d;
+}
+
+/* título ocupa linha inteira */
+.titulo1 {
+  width: 100%;
+  margin-bottom: 20px;
+   font-size: 50px;
+    color: #dcdcdc;
+    display: inline-block;
+   
+}
+
+/* texto (esquerda) */
+.conteudo1 {
+  width: 45%;
+   display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza na vertical */
+ 
+  margin-left: 60px;
+}
+
+.conteudo1 p {
+  font-size: 25px; /* aumenta o tamanho */
+  line-height: 1.6;
+
+  font-family: 'Poppins', sans-serif; /* fonte mais moderna */
+  color: #ffffff;
+}
+
+/* imagem (direita) */
+.box-img1 {
+  width: 50%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+}
+
+/* container que vai deslizar */
+.slider {
+  display: flex;
+  width: 200%; /* 2 imagens */
+  height: 100%;
+  animation: slide 6s infinite;
+}
+
+/* suas imagens */
+.slider img {
+ width: 100%;
+  flex: 0 0 100%;
+  height: auto;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  45%  { transform: translateX(0); }
+
+  50%  { transform: translateX(-100%); }
+  95%  { transform: translateX(-100%); }
+
+  100% { transform: translateX(0); }
+}
+
+.botao1 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a6cf7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    justify-content: flex-end;
+}
+
+.botao1 a:hover {
+    background-color: #2f4ed8;
+}
+
+
+
+/* adicionar linha entre home e sobre  */
+.sobre {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+.carros{
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar linha */
+  padding: 40px;
+  background: #41484d;
+}
+
+/* título ocupa linha inteira */
+.titulo2 {
+  width: 100%;
+  margin-bottom: 20px;
+   font-size: 50px;
+    color: #dcdcdc;
+    display: inline-block;
+   
+}
+
+/* texto (esquerda) */
+.conteudo2 {
+  width: 50%;
+   display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza na vertical */
+}
+
+.conteudo2 p {
+  font-size: 25px; /* aumenta o tamanho */
+  line-height: 1.6;
+
+  font-family: 'Poppins', sans-serif; /* fonte mais moderna */
+  color: #ffffff;
+}
+
+/* imagem (direita) */
+.box-img2 {
+  width: 46%;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 30px;
+}
+
+.box-img2 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 40px #ffffff
+}
+
+.botao2 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a6cf7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.botao2 a:hover {
+    background-color: #2f4ed8;
+}
+
+
+
+
+
+
+
+.mapas{
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar linha */
+  padding: 40px;
+  background: #41484d;
+}
+
+/* título ocupa linha inteira */
+.titulo3 {
+  width: 100%;
+  margin-bottom: 20px;
+   font-size: 50px;
+    color: #dcdcdc;
+    display: inline-block;
+   
+}
+
+/* texto (esquerda) */
+.conteudo3 {
+  width: 45%;
+   display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza na vertical */
+ 
+  margin-left: 60px;
+}
+
+.conteudo3 p {
+  font-size: 25px; /* aumenta o tamanho */
+  line-height: 1.6;
+
+  font-family: 'Poppins', sans-serif; /* fonte mais moderna */
+  color: #ffffff;
+}
+
+/* imagem (direita) */
+.box-img3 {
+  width: 50%;
+  display: flex;
+  
+}
+
+.box-img3 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 40px #ffffff
+}
+
+.botao3 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a6cf7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    justify-content: flex-end;
+}
+
+.botao3 a:hover {
+    background-color: #2f4ed8;
+}
+
