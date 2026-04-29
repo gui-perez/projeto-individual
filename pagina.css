@@ -28,6 +28,7 @@ html {
 .barra {
     display: flex;
     gap: 50px; 
+    align-items: center;
 }
 
 
@@ -54,21 +55,27 @@ html {
 }
 
 
-.user a {
-    color: white;
-    font-size: 22px;
+.user{
+padding: 8px;
+border-radius: 30px; /* cantos arredondados */
+border:solid 2px;
+border-color: rgb(44, 92, 252);
+background-color: #000000;
 }
 
-.user i:hover {
-    color: #000000;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 40px #ffffff;
+.user:hover {
     padding: 8px;
-     border-radius: 99px;
-     background: #ffffff;
+  border-radius: 30px; /* cantos arredondados */
+  background: #ffffff; /* cor de fundo */
+  box-shadow: 0 0 40px rgb(44, 92, 252);
+  transition: all 0.3s ;
 }
-
+.user:hover a{
+  color:#000000;
+}
+.user a{
+    color:rgb(44, 92, 252) ;
+}
 
 
 .logo img {
