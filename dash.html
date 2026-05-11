@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/dash.css">
+    <script src="https://kit.fontawesome.com/d840916580.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="header">
+
+         <div class="logo">
+             <img src="img/logo.png" alt="Logo">
+         </div>
+
+        <div class="barra">
+
+            <div class="b1"><a href="home.html">Home</a></div>
+           
+
+        </div>
+    </div>
+
+    <div class="container-graficos">
+
+
+           <div class="linha1">
+                <div class="grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div> 
+
+
+            <div class="linha2">
+                
+                    <div class="grafico">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+               
+           
+                
+                    <div class="grafico">
+                        <canvas id="myChart4"></canvas>
+                    
+                </div>
+            </div>
+            
+    </div>
+
+    
+            
+
+</body>
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'doughnut',
+    data: {
+        labels: ['Octane', 'Dominus', 'Fennec', 'Outros'],
+        datasets: [{
+            data: [35, 28, 15, 22],
+            backgroundColor: [
+                '#ff7b00',
+                '#1e90ff',
+                '#00c3ff',
+                '#888'
+            ],
+            borderWidth: 2,
+            borderColor: '#111827'
+        }]
+    },
+    options: {
+        cutout: '30%',
+        plugins:{
+            legend:{
+                labels:{
+                }
+            }
+        }
+    }
+});
+
+        const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+             type: 'doughnut',
+    data: {
+        labels: ['DFH stadium', 'Mannfield', 'Aquadome', 'Utopia Coliseum', 'outros'],
+        datasets: [{
+            data: [40, 25, 15, 10, 10],
+            backgroundColor: [
+                '#ff7b00',
+                '#1e90ff',
+                '#00c3ff',
+                '#508f72',
+                '#888'
+            ],
+            borderWidth: 2,
+            borderColor: '#111827'
+        }]
+    },
+    options: {
+        cutout: '30%',
+        plugins:{
+            legend:{
+                labels:{
+                }
+            }
+        }
+    }
+});
+
+     const ctx3 = document.getElementById('myChart3');
+
+    new Chart(ctx3, {
+          type: 'bar', // pode mudar o tipo
+        data: {
+            labels: ['fennec', 'octane', 'dominous', 'van'],
+            datasets: [{
+                label: 'ranking top 5 carros(mais usados)',
+                data: [40, 34, 28, 10],
+                backgroundColor: '#1e90ff',
+            },
+            
+            
+        
+        ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+     const ctx4 = document.getElementById('myChart4');
+
+    new Chart(ctx4, {
+        type: 'line',
+        data: {
+            labels: ['Enquete 1', 'Enquete 2', 'Enquete 3', 'Enquete 4', 'Enquete 5', 'Enquete 6'],
+            datasets: [{
+                label: 'Carro mais legal',
+                data: [12, 23, 28, 25, 22, 23],
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+            },
+            {
+                label: 'Mapa mais legal',
+                data: [23, 27, 36, 34, 12, 42],
+                backgroundColor: 'rgb(54, 162, 235)',
+                borderColor: 'rgb(54, 162, 235)',
+            }
+        ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
+
+</html>

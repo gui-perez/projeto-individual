@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+body{
+   
+       margin: 0;
+    height: 100%;
+   
+}
+
+
+/* barra superior */
+.header{
+    font-family: 'Montserrat', sans-serif;
+    background-color:#000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5%;
+}
+
+.header a{
+     text-decoration: none;
+     color:#ffffff;
+     font-size: 25px;
+}
+
+
+
+.barra {
+    display: flex;
+    gap: 50px; 
+    align-items: center;
+}
+
+
+.b1  a:hover {
+  padding: 8px;
+  border-radius: 30px; /* cantos arredondados */
+  background: #ffffff; /* cor de fundo */
+  box-shadow: 0 0 40px rgb(44, 92, 252);
+  color:#000000;
+  transition: all 0.3s ;
+}
+
+
+.header img{
+    width: 20%;
+}
+
+
+
+
+.container-graficos{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 12px;
+
+}
+
+.grafico {
+    background: rgb(241, 241, 241);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 40px;
+     height: 250px;
+    position: relative;
+}
+
+.container-graficos{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 10px; 
+}
+
+
+.linha1,
+.linha2{
+    background-color: rgb(173, 188, 231);
+    display: flex;
+     gap: 10px;
+
+}
+
+
+/* canvas ocupa todo espaço */
+
+.grafico canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
