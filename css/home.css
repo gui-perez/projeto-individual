@@ -7,7 +7,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* barra superior */
 .header{
     font-family: 'Montserrat', sans-serif;
     background-color:#000000;
@@ -37,8 +36,8 @@ html {
 
 .b1  a:hover {
   padding: 8px;
-  border-radius: 30px; /* cantos arredondados */
-  background: #ffffff; /* cor de fundo */
+  border-radius: 30px; 
+  background: #ffffff; 
   box-shadow: 0 0 40px #ffffff;
   color:#000000;
   transition: all 0.3s ease;
@@ -47,8 +46,8 @@ html {
 
 .b2  a:hover {
   padding: 8px;
-  border-radius: 30px; /* cantos arredondados */
-  background: #ffffff; /* cor de fundo */
+  border-radius: 30px; 
+  background: #ffffff; 
   box-shadow: 0 0 40px #ffffff;
   color:#000000;
   transition: all 0.3s ease;
@@ -57,24 +56,24 @@ html {
 
 .user{
 padding: 8px;
-border-radius: 30px; /* cantos arredondados */
+border-radius: 30px; 
 border:solid 2px;
-border-color: rgb(44, 92, 252);
+border-color: rgb(250, 216, 64);
 background-color: #000000;
 }
 
 .user:hover {
     padding: 8px;
-  border-radius: 30px; /* cantos arredondados */
-  background: #ffffff; /* cor de fundo */
-  box-shadow: 0 0 40px rgb(44, 92, 252);
+  border-radius: 30px; 
+  background: #ffffff;
+  box-shadow: 0 0 40px rgb(250, 216, 64);
   transition: all 0.3s ;
 }
 .user:hover a{
   color:#000000;
 }
 .user a{
-    color:rgb(44, 92, 252) ;
+    color:rgb(250, 216, 64);
 }
 
 
@@ -84,7 +83,7 @@ background-color: #000000;
 
 
 
-/* pagina principal */
+
 
 .home{
     min-height: 100vh;
@@ -94,20 +93,20 @@ background-color: #000000;
      background-position: center;
      overflow: hidden;
      background-image:
-    linear-gradient( to right,rgba(0,0,0,0.1), rgba(0,0,0,0.8)),
-    url("../img/fundo.jpg") ;
-    background-size: cover;       /* cobre toda área */
-    background-position: center;  /* centraliza */
+    linear-gradient( to right,rgba(0,0,0,0.8), rgba(0,0,0,0.1)),
+    url("../img/fundoHome.png") ;
+    background-size: cover;      
+    background-position: center;  
      background-size: cover; 
 }
 
 
 .conteudo{
   display: flex;
-  justify-content: right;
+  justify-content: left;
   align-items: center;
   height: 100vh;
-  padding-right: 10%;
+  padding-left: 10%;
 }
 
 .titulo{
@@ -123,48 +122,47 @@ font-family: 'Montserrat', sans-serif;
 
 
 
-/* resto da pagina */
+
 
 .sobre{
   display: flex;
-  flex-wrap: wrap; /* permite quebrar linha */
+  flex-wrap: wrap; 
   padding: 40px;
   background-image:
   linear-gradient( rgba(0,0,0,0.89), rgba(0,0,0,0.89)),
-  url("../img/fundo-sobre.png") ;
-  background-size: cover;       /* cobre toda área */
-  background-position: center;  /* centraliza */
+  url("../img/fundoBloco.png") ;
+  background-size: cover;       
+  background-position: center;  
 }
 
-/* título ocupa linha inteira */
+
 .titulo1 {
   width: 100%;
   margin-bottom: 20px;
    font-size: 50px;
     color: #dcdcdc;
     display: inline-block;
-   
+   padding-left: 18%;
 }
 
-/* texto (esquerda) */
 .conteudo1 {
   width: 45%;
    display: flex;
   flex-direction: column;
-  justify-content: center; /* centraliza na vertical */
+  justify-content: center; 
  
   margin-left: 60px;
 }
 
 .conteudo1 p {
-  font-size: 25px; /* aumenta o tamanho */
+  font-size: 25px;
   line-height: 1.6;
 
-  font-family: 'Poppins', sans-serif; /* fonte mais moderna */
+  font-family: 'Poppins', sans-serif; 
   color: #ffffff;
 }
 
-/* imagem (direita) */
+
 .box-img1 {
   width: 50%;
   display: flex;
@@ -177,7 +175,7 @@ font-family: 'Montserrat', sans-serif;
 .slider {
   display: flex;
   width: 200%; /* 2 imagens */
-  height: 100%;
+  height: 85%;
   animation: slide 6s infinite;
 }
 
@@ -217,7 +215,7 @@ font-family: 'Montserrat', sans-serif;
 
 /* adicionar linha entre home e sobre  */
 .sobre {
-    border-top: 2px solid #ccc;
+    border-top: 15px solid rgb(250, 216, 64);
     margin-top: 20px;
 }
 
@@ -229,44 +227,46 @@ font-family: 'Montserrat', sans-serif;
 
 
 
-.carros{
+.carreira{
   display: flex;
-  flex-wrap: wrap; /* permite quebrar linha */
+  flex-wrap: wrap; 
   padding: 40px;
   background-image:
   linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)),
-  url("../img/fundo-carros.png") ;
-  background-size: cover;       /* cobre toda área */
-  background-position: center;  /* centraliza */
+  url("../img/fundoBloco.png") ;
+  background-size: cover;       
+  background-position: center;  
   margin-top: 3px;
 }
 
-/* título ocupa linha inteira */
+
 .titulo2 {
   width: 100%;
   margin-bottom: 20px;
    font-size: 50px;
     color: #dcdcdc;
-    display: inline-block;
+    display: flex;
+    justify-content: right;
+    padding-right: 15%;
 }
 
-/* texto (esquerda) */
+
 .conteudo2 {
   width: 50%;
    display: flex;
   flex-direction: column;
-  justify-content: center; /* centraliza na vertical */
+  justify-content: center; 
 }
 
 .conteudo2 p {
-  font-size: 25px; /* aumenta o tamanho */
+  font-size: 25px; 
   line-height: 1.6;
 
-  font-family: 'Poppins', sans-serif; /* fonte mais moderna */
+  font-family: 'Poppins', sans-serif; 
   color: #ffffff;
 }
 
-/* imagem (direita) */
+
 .box-img2 {
   width: 46%;
   display: flex;
@@ -301,19 +301,19 @@ font-family: 'Montserrat', sans-serif;
 
 
 
-.mapas{
+.discografia{
   display: flex;
-  flex-wrap: wrap; /* permite quebrar linha */
+  flex-wrap: wrap; 
   padding: 40px;
   background-image:
   linear-gradient( rgba(0,0,0,0.89), rgba(0,0,0,0.89)),
-  url("../img/fundo-sobre.png") ;
-  background-size: cover;       /* cobre toda área */
-  background-position: center;  /* centraliza */
+  url("../img/fundoBloco.png") ;
+  background-size: cover;       
+  background-position: center; 
   margin-top: 3px;
 }
 
-/* título ocupa linha inteira */
+
 .titulo3 {
   width: 100%;
   margin-bottom: 20px;
@@ -323,25 +323,25 @@ font-family: 'Montserrat', sans-serif;
    
 }
 
-/* texto (esquerda) */
+
 .conteudo3 {
   width: 45%;
    display: flex;
   flex-direction: column;
-  justify-content: center; /* centraliza na vertical */
+  justify-content: center; 
  
   margin-left: 60px;
 }
 
 .conteudo3 p {
-  font-size: 25px; /* aumenta o tamanho */
+  font-size: 25px; 
   line-height: 1.6;
 
-  font-family: 'Poppins', sans-serif; /* fonte mais moderna */
+  font-family: 'Poppins', sans-serif; 
   color: #ffffff;
 }
 
-/* imagem (direita) */
+
 .box-img3 {
   width: 50%;
   display: flex;
@@ -372,14 +372,14 @@ font-family: 'Montserrat', sans-serif;
 
 
 
-/* css do nivel */
-.nivel {
+
+.coreografia {
   padding: 10%;
   background-image:
   linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7)),
-  url("../img/fundo-nivel.png") ;
-  background-size: cover;       /* cobre toda área */
-  background-position: center;  /* centraliza */
+  url("../img/fundoBloco.png") ;
+  background-size: cover;      
+  background-position: center;  
   margin-top: 3px;
 }
 
@@ -425,7 +425,7 @@ border-radius: 20px;
 }
 
 .botao4{
-   margin: 30px auto; /*auto faz ir para o centro */
+   margin: 30px auto;
   padding: 10px;
   background-color: #2f4ed8;
   width: fit-content;

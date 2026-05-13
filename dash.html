@@ -21,12 +21,194 @@
         <div class="barra">
 
             <div class="b1"><a href="home.html">Home</a></div>
-           
 
+            <div class="b2"><a href="home.html">quiz</a></div>
+        
         </div>
     </div>
 
-    <div class="container-graficos">
+     <div class="dashboard">
+
+        <div class="container-kpi">
+
+            <div class="kpi">
+                <div>
+                    <strong>Total de quizes realizados</strong>
+                    <span>5</span>
+                    <div class="kpi-ancoragem">
+                        <strong></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kpi">
+                <div>
+                    <strong>Mapa mais bonito</strong>
+                    <span>Park</span>
+                     <div class="kpi-ancoragem">
+                        <strong></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kpi">
+                <div>
+                    <strong>Melhor carro</strong>
+                    <span>Fennec</span>
+                     <div class="kpi-ancoragem">
+                        <strong></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kpi">
+                <div>
+                    <strong>Avaliou bem o jogo</strong>
+                    <span>67%</span>
+                     <div class="kpi-ancoragem">
+                        <strong></strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h1>Dashboard</h1>
+
+        <div class="container-graficos">
+            <div class="grafico">
+                <canvas id="graficoTempoRetencao"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="graficoInteracoesHora"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+
+
+const graficoTempoRetencao = document.getElementById('graficoTempoRetencao');
+
+new Chart(graficoTempoRetencao, {
+    type: 'bar',
+    data: {
+        labels: ['DFH stadium', 'Mannfield', 'Aquadome', 'Utopia Coliseum', 'outros'],
+        datasets: [{
+            label: 'Quantidade de votos',
+            data: [180, 160, 150, 140, 120, 100],
+            backgroundColor: '#ae80ed',
+            borderColor: '#2F0569',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Melhores mapas',
+                color: '#ffffff',
+                font: { size: 16 }
+            },
+            legend: {
+                labels: { color: "#ffffff" }
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    font: { size: 18 },
+                    display: true,
+                    text: 'Mapas',
+                    color: '#ffffff'
+                },
+                ticks: {
+                    font: { size: 13 },
+                    color: "#ffffff"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Quantidade de votos',
+                    color: '#ffffff',
+                    font: { size: 16 }
+                },
+                beginAtZero: true,
+                ticks: {
+                    font: { size: 16 },
+                    color: "#ffffff"
+                }
+            }
+        }
+    }
+});
+
+const graficoInteracoesHora = document.getElementById('graficoInteracoesHora');
+
+new Chart(graficoInteracoesHora, {
+    type: 'line',
+    data: {
+        labels: ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
+        datasets: [{
+            label: 'Interações',
+            data: [500, 800, 350, 600, 1500, 1400],
+            borderColor: '#ae80ed',
+            borderDash: [5, 5],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                ticks: {
+                    font: { size: 13 },
+                    color: "#ffffff"
+                },
+                title: {
+                    font: { size: 18 },
+                    text: "Hora",
+                    display: true,
+                    color: "#fff"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Quantidade',
+                    color: '#ffffff',
+                    font: { size: 16 }
+                },
+                beginAtZero: true,
+                ticks: {
+                    font: { size: 16 },
+                    color: "#ffffff"
+                }
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'Quantidade total de interações por Hora',
+                color: '#ffffff',
+                font: { size: 16 }
+            },
+            legend: {
+                labels: { color: "#ffffff" }
+            }
+        }
+    }
+});
+
+</script>
+
+    <!-- <div class="container-graficos">
 
 
            <div class="linha1">
@@ -59,7 +241,7 @@
             
 
 </body>
-<script>
+<scrip
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
@@ -173,6 +355,6 @@
         }
     });
 
-</script>
+</script> -->
 
 </html>
