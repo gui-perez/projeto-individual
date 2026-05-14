@@ -39,7 +39,7 @@ body{
   padding: 8px;
   border-radius: 30px; /* cantos arredondados */
   background: #ffffff; /* cor de fundo */
-  box-shadow: 0 0 40px rgb(44, 92, 252);
+  box-shadow: 0 0 40px rgb(250, 216, 64);
   color:#000000;
   transition: all 0.3s ;
 }
@@ -49,7 +49,7 @@ body{
   padding: 8px;
   border-radius: 30px; /* cantos arredondados */
   background: #ffffff; /* cor de fundo */
-  box-shadow: 0 0 40px rgb(44, 92, 252);
+  box-shadow: 0 0 40px rgb(250, 216, 64);
   color:#000000;
   transition: all 0.3s ;
 }
@@ -58,7 +58,7 @@ body{
 padding: 8px;
 border-radius: 30px; /* cantos arredondados */
 border:solid 2px;
-border-color: rgb(44, 92, 252);
+border-color: rgb(250, 216, 64);
 background-color: #000000;
 }
 
@@ -66,14 +66,14 @@ background-color: #000000;
     padding: 8px;
   border-radius: 30px; /* cantos arredondados */
   background: #ffffff; /* cor de fundo */
-  box-shadow: 0 0 40px rgb(44, 92, 252);
+  box-shadow: 0 0 40px rgb(250, 216, 64);
   transition: all 0.3s ;
 }
 .user:hover a{
   color:#000000;
 }
 .user a{
-    color:rgb(44, 92, 252) ;
+    color:rgb(250, 216, 64);
 }
 
 .header img{
@@ -81,10 +81,10 @@ background-color: #000000;
 }
 
 
-.mapa{
+.album{
     padding: 30px;
-    background-color: rgba(0, 81, 255, 0.6);
-    box-shadow: 0 0 50px rgb(0, 22, 148);
+    background-color: rgba(168, 175, 192, 0.6);
+    box-shadow: 0 0 50px rgb(201, 186, 120);
     border: 3px solid white;
     border-radius: 20px;
     height: 200px;
@@ -98,27 +98,27 @@ background-color: #000000;
     gap: 300px;
 }
 
-.imagem-mapa{
+.imagem-album{
     display: flex;
     justify-content: left;
     width: 35%;
 }
-.imagem-mapa img{
-    width: 100%;
+.imagem-album img{
+    width: 300px;
     height: 250px;
     object-fit: cover;
     border-radius: 20px;
 }
 
 
-.info-mapa{
+.info-album{
  display: flex;
  flex-direction: column;
 }
-.info-mapa h3{
+.info-album h3{
     font-size: 28px;
     margin-bottom: 10px;
-}.info-mapa p{
+}.info-album p{
     font-size: 18px;
 }
 
