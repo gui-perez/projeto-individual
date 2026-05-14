@@ -70,3 +70,95 @@ background-color: #000000;
 .logo img {
      width: 30%;
 }
+
+
+
+body{
+  background-color: rgb(255, 255, 255);
+}
+
+.biografia{
+  padding: 30px;
+  margin: 10%;
+  background-color: rgb(117, 117, 117);
+  border-radius: 30px;
+}
+
+.legado{
+  padding: 30px;
+  margin: 10%;
+  background-color:  rgb(117, 117, 117);
+  border-radius: 30px;
+}
+
+.galeria{
+  padding: 30px;
+  margin: 10%;
+  background-color:  rgb(117, 117, 117);
+  border-radius: 30px;
+}
+
+.titulo{
+  margin-bottom: 15px;
+}
+
+.conteudo{
+  display: flex;
+  flex-direction: column;
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.coluna{
+    padding: 40px;
+    margin: 5px;
+    background-color: rgb(51, 129, 180);
+    border-radius: 15px;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.coluna:hover{
+    transform: translateY(-8px);
+    transition: 0.3s;
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+} 
+
+.conteudo1{
+  display: flex;
+  flex-direction: column;
+}
+
+.fotos{
+  background-color: rgb(253, 255, 136);
+  width: 70px;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.figurino{
+  background-color: rgb(253, 255, 136);
+  width: 90px;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}.momento{
+  background-color: rgb(253, 255, 136);
+  width: 110px;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
