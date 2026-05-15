@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image:url(../img/fundoLogin.png);
+    background-image:url(../img/fundoUsuario.png);
     background-size: cover;
 }
 
@@ -39,7 +39,7 @@ body{
   padding: 8px;
   border-radius: 30px; /* cantos arredondados */
   background: #ffffff; /* cor de fundo */
-  box-shadow: 0 0 40px rgb(44, 92, 252);
+  box-shadow: 0 0 40px rgb(250, 216, 64);
   color:#000000;
   transition: all 0.3s ;
 }
@@ -49,7 +49,7 @@ body{
   padding: 8px;
   border-radius: 30px; /* cantos arredondados */
   background: #ffffff; /* cor de fundo */
-  box-shadow: 0 0 40px rgb(44, 92, 252);
+  box-shadow: 0 0 40px rgb(250, 216, 64);
   color:#000000;
   transition: all 0.3s ;
 }
@@ -58,7 +58,7 @@ body{
 padding: 8px;
 border-radius: 30px; /* cantos arredondados */
 border:solid 2px;
-border-color: rgb(44, 92, 252);
+border-color: rgb(250, 216, 64);
 background-color: #000000;
 }
 
@@ -66,14 +66,14 @@ background-color: #000000;
     padding: 8px;
   border-radius: 30px; /* cantos arredondados */
   background: #ffffff; /* cor de fundo */
-  box-shadow: 0 0 40px rgb(44, 92, 252);
+  box-shadow: 0 0 40px rgb(250, 216, 64);
   transition: all 0.3s ;
 }
 .user:hover a{
   color:#000000;
 }
 .user a{
-    color:rgb(44, 92, 252) ;
+    color:rgb(250, 216, 64);
 }
 
 .header img{
@@ -100,7 +100,7 @@ background-color: #000000;
     backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 26, 255, 0.2);
     border-radius: 25px;
-    box-shadow: 0 0 100px rgba(47, 0, 255, 0.4);
+    box-shadow: 0 0 70px rgb(255, 252, 237);
     color: rgb(44, 92, 252);
 }
 
@@ -108,7 +108,7 @@ background-color: #000000;
 /* posiçao dentro do card  */
 .card-login{
     display: flex;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,14 +128,35 @@ background-color: #000000;
     flex-direction: column;
     border: solid 2px;
     border-color: rgb(44, 92, 252);
-    height: 23px;
+    height: 30px;
     justify-content: center;
     align-items: flex-start;
+    position: relative;
+    
 }
 
 .campo span{
  color: #ffffff;
  font-size: 120%;
+ position: relative;
+ top: -50px; 
+ padding:3px;
+ background-color: rgb(16, 95, 168);
+ border-radius: 10px;
+}
+
+.campo input{
+ color: #ffffff;
+ font-size: 120%;
+ position: absolute;
+}
+
+.campo select{
+ position: absolute;
+ font-size: 120%;
+ opacity: 0;
+ width: 100%;
+ height: 100%
 }
 
 .formulario {
@@ -197,9 +218,7 @@ background-color: #000000;
 }
 
 .logoCadastro img {
-    width: 10%;
-    border-radius: 20px;
-    margin-bottom: 4%;
+    width: 30%;
 }
 
 
