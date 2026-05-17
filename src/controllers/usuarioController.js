@@ -16,7 +16,7 @@ function autenticar(req, res) {
                     console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
-                    if (resultado.length == 1) {
+                    if (resultadoAutenticar.length == 1) {
                     res.json({
                         id: resultadoAutenticar[0].id,
                         nome: resultadoAutenticar[0].nome,

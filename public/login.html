@@ -40,7 +40,7 @@
                         <span>Senha:</span>
                         <input id="senha_input" type="password" placeholder="digite sua senha">
                     </div>
-                    <button class="botao" onclick="entar()"><a href="dash.html"> Entrar </a></button>
+                    <button class="botao" onclick="entrar()"> Entrar </button>
                     <div class="msg">
                        <span>Ainda não tem uma conta?</span> <a href="cadastro.html"> Crie uma </a>
                     </div>
@@ -57,7 +57,6 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -67,7 +66,7 @@
             return false;
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -87,7 +86,7 @@
             }
 
 
-        if (senhaVar.length < 8) {
+        if (senhaVar.length < 3) {
                 alert(`Senha inválida`);
                 return;
             }
