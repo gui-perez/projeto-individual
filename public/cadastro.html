@@ -85,6 +85,19 @@
                             <option value="Bad">Bad</option>
                         </select>
                     </div>
+
+                    <div class="campo">
+                        <span>Nivel fã:</span>
+                        <select id="fa_input">
+                            <option value="">Selecione um nivel</option>
+                            <option value="Iniciante">Iniciante</option>
+                            <option value="Casual">Casual</option>
+                            <option value="Fã">Fã</option>
+                            <option value="Super Fã">Super Fã</option>
+                            <option value="Obcecado">Obcecado</option>
+                            <option value="Michael Jackson Supremo">Michael Jackson Supremo</option>
+                        </select>
+                    </div>
                 <button class="botao" onclick="cadastrar()">cadastrar</button>
                     <div class="msg">
                         <span>Ja tem uma conta?</span> <a href="login.html"> Entre </a>
@@ -115,6 +128,7 @@
     var musicaVar = musica_input.value;
     var faseVar = fase_input.value;
     var clipeVar = clipe_input.value;
+    var niveVar = fa_input.value;
   
 
     // Verificando se há algum campo em branco
@@ -125,7 +139,8 @@
       confirmacaoSenhaVar == "" ||
       musicaVar == "" ||
       faseVar == "" ||
-      clipeVar == ""
+      clipeVar == "" ||
+      niveVar == ""
     ) {
       alert("Preencha todos os campos!");
       return false;
@@ -165,7 +180,8 @@
         senhaServer: senhaVar,
         musicaServer: musicaVar,
         faseServer: faseVar,
-        clipeServer: clipeVar
+        clipeServer: clipeVar,
+        nivelServer: niveVar
       }),
     })
       .then(function (resposta) {
