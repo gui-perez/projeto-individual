@@ -33,7 +33,7 @@
 
             <div class="kpi">
                 <div>
-                    <strong>Total de quizes realizados</strong>
+                    <strong>teste</strong>
                     <span>5</span>
                     <div class="kpi-ancoragem">
                         <strong></strong>
@@ -43,8 +43,8 @@
 
             <div class="kpi">
                 <div>
-                    <strong>Mapa mais bonito</strong>
-                    <span>Park</span>
+                    <strong>fase mais popular </strong>
+                    <span>thriller</span>
                      <div class="kpi-ancoragem">
                         <strong></strong>
                     </div>
@@ -53,8 +53,8 @@
 
             <div class="kpi">
                 <div>
-                    <strong>Melhor carro</strong>
-                    <span>Fennec</span>
+                    <strong>super fas</strong>
+                    <span>15</span>
                      <div class="kpi-ancoragem">
                         <strong></strong>
                     </div>
@@ -63,8 +63,8 @@
 
             <div class="kpi">
                 <div>
-                    <strong>Avaliou bem o jogo</strong>
-                    <span>67%</span>
+                    <strong>total de fas</strong>
+                    <span>31</span>
                      <div class="kpi-ancoragem">
                         <strong></strong>
                     </div>
@@ -81,6 +81,12 @@
             </div>
             <div class="grafico">
                 <canvas id="graficoInteracoesHora"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="graficoteste1"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="graficoteste2"></canvas>
             </div>
         </div>
 
@@ -206,155 +212,120 @@ new Chart(graficoInteracoesHora, {
     }
 });
 
-</script>
+const graficoteste1 = document.getElementById('graficoteste1');
 
-    <!-- <div class="container-graficos">
-
-
-           <div class="linha1">
-                <div class="grafico">
-                    <canvas id="myChart"></canvas>
-                </div>
-                <div class="grafico">
-                    <canvas id="myChart2"></canvas>
-                </div>
-            </div> 
-
-
-            <div class="linha2">
-                
-                    <div class="grafico">
-                        <canvas id="myChart3"></canvas>
-                    </div>
-               
-           
-                
-                    <div class="grafico">
-                        <canvas id="myChart4"></canvas>
-                    
-                </div>
-            </div>
-            
-    </div>
-
-    
-            
-
-</body>
-<scrip
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-        type: 'doughnut',
-    data: {
-        labels: ['Octane', 'Dominus', 'Fennec', 'Outros'],
-        datasets: [{
-            data: [35, 28, 15, 22],
-            backgroundColor: [
-                '#ff7b00',
-                '#1e90ff',
-                '#00c3ff',
-                '#888'
-            ],
-            borderWidth: 2,
-            borderColor: '#111827'
-        }]
-    },
-    options: {
-        cutout: '30%',
-        plugins:{
-            legend:{
-                labels:{
-                }
-            }
-        }
-    }
-});
-
-        const ctx2 = document.getElementById('myChart2');
-
-    new Chart(ctx2, {
-             type: 'doughnut',
+new Chart(graficoteste1, {
+    type: 'bar',
     data: {
         labels: ['DFH stadium', 'Mannfield', 'Aquadome', 'Utopia Coliseum', 'outros'],
         datasets: [{
-            data: [40, 25, 15, 10, 10],
-            backgroundColor: [
-                '#ff7b00',
-                '#1e90ff',
-                '#00c3ff',
-                '#508f72',
-                '#888'
-            ],
-            borderWidth: 2,
-            borderColor: '#111827'
+            label: 'Quantidade de votos',
+            data: [180, 160, 150, 140, 120, 100],
+            backgroundColor: '#ae80ed',
+            borderColor: '#2F0569',
+            borderWidth: 2
         }]
     },
     options: {
-        cutout: '30%',
-        plugins:{
-            legend:{
-                labels:{
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Melhores mapas',
+                color: '#ffffff',
+                font: { size: 16 }
+            },
+            legend: {
+                labels: { color: "#ffffff" }
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    font: { size: 18 },
+                    display: true,
+                    text: 'Mapas',
+                    color: '#ffffff'
+                },
+                ticks: {
+                    font: { size: 13 },
+                    color: "#ffffff"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Quantidade de votos',
+                    color: '#ffffff',
+                    font: { size: 16 }
+                },
+                beginAtZero: true,
+                ticks: {
+                    font: { size: 16 },
+                    color: "#ffffff"
                 }
             }
         }
     }
 });
 
-     const ctx3 = document.getElementById('myChart3');
+const graficoteste2 = document.getElementById('graficoteste2');
 
-    new Chart(ctx3, {
-          type: 'bar', // pode mudar o tipo
-        data: {
-            labels: ['fennec', 'octane', 'dominous', 'van'],
-            datasets: [{
-                label: 'ranking top 5 carros(mais usados)',
-                data: [40, 34, 28, 10],
-                backgroundColor: '#1e90ff',
+new Chart(graficoteste2, {
+    type: 'bar',
+    data: {
+        labels: ['DFH stadium', 'Mannfield', 'Aquadome', 'Utopia Coliseum', 'outros'],
+        datasets: [{
+            label: 'Quantidade de votos',
+            data: [180, 160, 150, 140, 120, 100],
+            backgroundColor: '#ae80ed',
+            borderColor: '#2F0569',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Melhores mapas',
+                color: '#ffffff',
+                font: { size: 16 }
             },
-            
-            
-        
-        ]
+            legend: {
+                labels: { color: "#ffffff" }
+            }
         },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        scales: {
+            x: {
+                title: {
+                    font: { size: 18 },
+                    display: true,
+                    text: 'Mapas',
+                    color: '#ffffff'
+                },
+                ticks: {
+                    font: { size: 13 },
+                    color: "#ffffff"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Quantidade de votos',
+                    color: '#ffffff',
+                    font: { size: 16 }
+                },
+                beginAtZero: true,
+                ticks: {
+                    font: { size: 16 },
+                    color: "#ffffff"
                 }
             }
         }
-    });
+    }
+});
 
-     const ctx4 = document.getElementById('myChart4');
-
-    new Chart(ctx4, {
-        type: 'line',
-        data: {
-            labels: ['Enquete 1', 'Enquete 2', 'Enquete 3', 'Enquete 4', 'Enquete 5', 'Enquete 6'],
-            datasets: [{
-                label: 'Carro mais legal',
-                data: [12, 23, 28, 25, 22, 23],
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-            },
-            {
-                label: 'Mapa mais legal',
-                data: [23, 27, 36, 34, 12, 42],
-                backgroundColor: 'rgb(54, 162, 235)',
-                borderColor: 'rgb(54, 162, 235)',
-            }
-        ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-</script> -->
-
-</html>
+</script>
