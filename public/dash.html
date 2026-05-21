@@ -30,81 +30,65 @@
      <div class="dashboard">
 
         <div class="container-kpi">
-
             <div class="kpi">
                 <div>
-                    <strong>teste</strong>
-                    <span>5</span>
-                    <div class="kpi-ancoragem">
-                        <strong></strong>
-                    </div>
+                    <strong>nível médio dos fãs</strong>
+                    <span>3,7</span>
+                    <div class="kpi-ancoragem"><strong>de 6 possível</strong></div>
                 </div>
             </div>
-
             <div class="kpi">
                 <div>
-                    <strong>fase mais popular </strong>
-                    <span>thriller</span>
-                     <div class="kpi-ancoragem">
-                        <strong></strong>
-                    </div>
+                    <strong>fase mais popular</strong>
+                    <span>Thriller</span>
+                    <div class="kpi-ancoragem"><strong>34% dos votos</strong></div>
                 </div>
             </div>
-
             <div class="kpi">
                 <div>
-                    <strong>super fas</strong>
+                    <strong>super fãs</strong>
                     <span>15</span>
-                     <div class="kpi-ancoragem">
-                        <strong></strong>
-                    </div>
+                    <div class="kpi-ancoragem"><strong>+3 este mês</strong></div>
                 </div>
             </div>
-
             <div class="kpi">
                 <div>
-                    <strong>total de fas</strong>
+                    <strong>total de fãs</strong>
                     <span>31</span>
-                     <div class="kpi-ancoragem">
-                        <strong></strong>
-                    </div>
+                    <div class="kpi-ancoragem"><strong>cadastrados</strong></div>
                 </div>
             </div>
-
         </div>
 
         <h1>Dashboard</h1>
 
         <div class="container-graficos">
             <div class="grafico">
-                <canvas id="graficoTempoRetencao"></canvas>
+                <canvas id="graficoMusica"></canvas>
             </div>
             <div class="grafico">
-                <canvas id="graficoInteracoesHora"></canvas>
+                <canvas id="graficoFase"></canvas>
             </div>
             <div class="grafico">
-                <canvas id="graficoteste1"></canvas>
+                <canvas id="graficoClipe"></canvas>
             </div>
             <div class="grafico">
-                <canvas id="graficoteste2"></canvas>
+                <canvas id="graficoNivelFa"></canvas>
             </div>
         </div>
 
     </div>
 
     <script>
+        const graficoMusica = document.getElementById('graficoMusica');
 
-
-
-const graficoTempoRetencao = document.getElementById('graficoTempoRetencao');
-
-new Chart(graficoTempoRetencao, {
+new Chart(graficoMusica, {
     type: 'bar',
     data: {
-        labels: ['DFH stadium', 'Mannfield', 'Aquadome', 'Utopia Coliseum', 'outros'],
+        labels: ['Thriller', 'Billie Jean', 'Beat It', 'Smooth Criminal', 'Black or White', 'Man in Mirror'],
         datasets: [{
             label: 'Quantidade de votos',
-            data: [180, 160, 150, 140, 120, 100],
+            data: [9, 7, 4, 4, 4, 3],
             backgroundColor: '#ae80ed',
             borderColor: '#2F0569',
             borderWidth: 2
@@ -116,25 +100,25 @@ new Chart(graficoTempoRetencao, {
         plugins: {
             title: {
                 display: true,
-                text: 'Melhores mapas',
+                text: 'Música favorita',
                 color: '#ffffff',
                 font: { size: 16 }
             },
             legend: {
-                labels: { color: "#ffffff" }
+                labels: { color: '#ffffff' }
             }
         },
         scales: {
             x: {
                 title: {
-                    font: { size: 18 },
                     display: true,
-                    text: 'Mapas',
-                    color: '#ffffff'
+                    text: 'Música',
+                    color: '#ffffff',
+                    font: { size: 18 }
                 },
                 ticks: {
-                    font: { size: 13 },
-                    color: "#ffffff"
+                    color: '#ffffff',
+                    font: { size: 13 }
                 }
             },
             y: {
@@ -146,42 +130,144 @@ new Chart(graficoTempoRetencao, {
                 },
                 beginAtZero: true,
                 ticks: {
-                    font: { size: 16 },
-                    color: "#ffffff"
+                    color: '#ffffff',
+                    font: { size: 16 }
                 }
             }
         }
     }
 });
 
-const graficoInteracoesHora = document.getElementById('graficoInteracoesHora');
+const graficoFase = document.getElementById('graficoFase');
 
-new Chart(graficoInteracoesHora, {
-    type: 'line',
+new Chart(graficoFase, {
+    type: 'bar',
     data: {
-        labels: ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
+        labels: ['Jackson 5', 'Off the Wall', 'Thriller Era', 'Bad Era', 'Dangerous Era', 'HIStory Era'],
         datasets: [{
-            label: 'Interações',
-            data: [500, 800, 350, 600, 1500, 1400],
-            borderColor: '#ae80ed',
-            borderDash: [5, 5],
+            label: 'Quantidade de votos',
+            data: [2, 3, 11, 7, 5, 3],
+            backgroundColor: ['#ae80ed', '#8a5fc4', '#c9a3f5', '#6b3fa0', '#d4b8f7', '#4a2070'],
+            borderColor: '#2F0569',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Fase favorita',
+                color: '#ffffff',
+                font: { size: 16 }
+            },
+            legend: {
+                labels: { color: '#ffffff' }
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Fase',
+                    color: '#ffffff',
+                    font: { size: 18 }
+                },
+                ticks: {
+                    color: '#ffffff',
+                    font: { size: 13 }
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Quantidade de votos',
+                    color: '#ffffff',
+                    font: { size: 16 }
+                },
+                beginAtZero: true,
+                ticks: {
+                    color: '#ffffff',
+                    font: { size: 16 }
+                }
+            }
+        }
+    }
+});
+
+const graficoClipe = document.getElementById('graficoClipe');
+
+new Chart(graficoClipe, {
+    type: 'doughnut',
+    data: {
+        labels: ['Thriller', 'Smooth Criminal', 'Beat It', 'Remember the Time', 'Black or White', 'Bad'],
+        datasets: [{
+            label: 'Quantidade de votos',
+            data: [10, 7, 6, 4, 3, 1],
+            backgroundColor: ['#ae80ed', '#8a5fc4', '#c9a3f5', '#6b3fa0', '#d4b8f7', '#4a2070'],
+            borderColor: '#010a88',
             borderWidth: 3
         }]
     },
     options: {
         responsive: true,
         maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Clipe favorito',
+                color: '#ffffff',
+                font: { size: 16 }
+            },
+            legend: {
+                labels: { color: '#ffffff' }
+            }
+        }
+    }
+});
+
+const graficoNivelFa = document.getElementById('graficoNivelFa');
+
+new Chart(graficoNivelFa, {
+    type: 'line',
+    data: {
+        labels: ['Iniciante', 'Casual', 'Fã', 'Super Fã', 'Obcecado', 'MJ Supremo'],
+        datasets: [{
+            label: 'Quantidade de fãs',
+            data: [2, 4, 9, 8, 5, 3],
+            borderColor: '#ae80ed',
+            borderWidth: 3,
+            backgroundColor: 'rgba(174, 128, 237, 0.15)',
+            fill: true,
+            tension: 0.4
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Distribuição por nível de fã',
+                color: '#ffffff',
+                font: { size: 16 }
+            },
+            legend: {
+                labels: { color: '#ffffff' }
+            }
+        },
         scales: {
             x: {
-                ticks: {
-                    font: { size: 13 },
-                    color: "#ffffff"
-                },
                 title: {
-                    font: { size: 18 },
-                    text: "Hora",
                     display: true,
-                    color: "#fff"
+                    text: 'Nível',
+                    color: '#ffffff',
+                    font: { size: 18 }
+                },
+                ticks: {
+                    color: '#ffffff',
+                    font: { size: 13 }
                 }
             },
             y: {
@@ -193,139 +279,12 @@ new Chart(graficoInteracoesHora, {
                 },
                 beginAtZero: true,
                 ticks: {
-                    font: { size: 16 },
-                    color: "#ffffff"
-                }
-            }
-        },
-        plugins: {
-            title: {
-                display: true,
-                text: 'Quantidade total de interações por Hora',
-                color: '#ffffff',
-                font: { size: 16 }
-            },
-            legend: {
-                labels: { color: "#ffffff" }
-            }
-        }
-    }
-});
-
-const graficoteste1 = document.getElementById('graficoteste1');
-
-new Chart(graficoteste1, {
-    type: 'bar',
-    data: {
-        labels: ['DFH stadium', 'Mannfield', 'Aquadome', 'Utopia Coliseum', 'outros'],
-        datasets: [{
-            label: 'Quantidade de votos',
-            data: [180, 160, 150, 140, 120, 100],
-            backgroundColor: '#ae80ed',
-            borderColor: '#2F0569',
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            title: {
-                display: true,
-                text: 'Melhores mapas',
-                color: '#ffffff',
-                font: { size: 16 }
-            },
-            legend: {
-                labels: { color: "#ffffff" }
-            }
-        },
-        scales: {
-            x: {
-                title: {
-                    font: { size: 18 },
-                    display: true,
-                    text: 'Mapas',
-                    color: '#ffffff'
-                },
-                ticks: {
-                    font: { size: 13 },
-                    color: "#ffffff"
-                }
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: 'Quantidade de votos',
                     color: '#ffffff',
                     font: { size: 16 }
-                },
-                beginAtZero: true,
-                ticks: {
-                    font: { size: 16 },
-                    color: "#ffffff"
                 }
             }
         }
     }
 });
 
-const graficoteste2 = document.getElementById('graficoteste2');
-
-new Chart(graficoteste2, {
-    type: 'bar',
-    data: {
-        labels: ['DFH stadium', 'Mannfield', 'Aquadome', 'Utopia Coliseum', 'outros'],
-        datasets: [{
-            label: 'Quantidade de votos',
-            data: [180, 160, 150, 140, 120, 100],
-            backgroundColor: '#ae80ed',
-            borderColor: '#2F0569',
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            title: {
-                display: true,
-                text: 'Melhores mapas',
-                color: '#ffffff',
-                font: { size: 16 }
-            },
-            legend: {
-                labels: { color: "#ffffff" }
-            }
-        },
-        scales: {
-            x: {
-                title: {
-                    font: { size: 18 },
-                    display: true,
-                    text: 'Mapas',
-                    color: '#ffffff'
-                },
-                ticks: {
-                    font: { size: 13 },
-                    color: "#ffffff"
-                }
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: 'Quantidade de votos',
-                    color: '#ffffff',
-                    font: { size: 16 }
-                },
-                beginAtZero: true,
-                ticks: {
-                    font: { size: 16 },
-                    color: "#ffffff"
-                }
-            }
-        }
-    }
-});
-
-</script>
+    </script>
