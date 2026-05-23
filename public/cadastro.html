@@ -118,6 +118,7 @@
 
   function cadastrar() {
     // aguardar();
+    const quizData = JSON.parse(localStorage.getItem('quiz_resultado'))
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
@@ -181,13 +182,18 @@
         musicaServer: musicaVar,
         faseServer: faseVar,
         clipeServer: clipeVar,
-        nivelServer: niveVar
+        nivelServer: niveVar,
+        pontuacaoServer: quizData ? quizData.pontuacao : null,
+        percentualServer: quizData ? quizData.percentual : null,
+        certasServer: quizData ? quizData.certas : null,
+        erradasServer: quizData ? quizData.erradas : null
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
+        localStorage.removeItem('quiz_resultado') // limpa para o proximo quiz
          alert("Cadastro realizado com sucesso!");
           setTimeout(() => {
             window.location = "login.html";

@@ -49,6 +49,9 @@ function cadastrar(req, res) {
     var fase = req.body.faseServer;
     var clipe = req.body.clipeServer;
     var nivel = req.body.nivelServer;
+    var pontuacao = req.body.pontuacaoServer;
+    var certas = req.body.certasServer;
+    var erradas = req.body.erradasServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -68,7 +71,7 @@ function cadastrar(req, res) {
     }   else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, musica, fase, clipe, nivel)
+        usuarioModel.cadastrar(nome, email, senha, musica, fase, clipe, nivel, pontuacao, certas, erradas)
             .then(
                 function (resultado) {
                     res.json(resultado);

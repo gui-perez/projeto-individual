@@ -75,34 +75,97 @@
 <script>
     const listaDeQuestoes = [
 
-        {
-            pergunta: "Qual mês tem 30 dias?",
-            alternativaA: "Janeiro",
-            alternativaB: "Dezembro",
-            alternativaC: "Junho",
-            alternativaD: "Agosto",
-            alternativaCorreta: "alternativaC"
-        },
+    {
+        pergunta: "Qual era o nome do grupo que Michael Jackson fazia parte quando criança?",
+        alternativaA: "The Jackson Five",
+        alternativaB: "MJ Band",
+        alternativaC: "King Pop",
+        alternativaD: "Moonwalkers",
+        alternativaCorreta: "alternativaA"
+    },
 
-        {
-            pergunta: "Quantas horas tem em um dia?",
-            alternativaA: "30 horas",
-            alternativaB: "38 horas",
-            alternativaC: "48 horas",
-            alternativaD: "24 horas",
-            alternativaCorreta: "alternativaD"
-        },
+    {
+        pergunta: "Qual álbum de Michael Jackson se tornou o mais vendido da história?",
+        alternativaA: "Bad",
+        alternativaB: "Thriller",
+        alternativaC: "Dangerous",
+        alternativaD: "Off The Wall",
+        alternativaCorreta: "alternativaB"
+    },
 
-        {
-            pergunta: "Qual destes números é ímpar?",
-            alternativaA: "Dez",
-            alternativaB: "Doze",
-            alternativaC: "Oito",
-            alternativaD: "Onze",
-            alternativaCorreta: "alternativaD"
-        }
+    {
+        pergunta: "Qual dança ficou famosa com Michael Jackson?",
+        alternativaA: "Breakdance",
+        alternativaB: "Samba",
+        alternativaC: "Moonwalk",
+        alternativaD: "Freestyle",
+        alternativaCorreta: "alternativaC"
+    },
 
-    ]
+    {
+        pergunta: "Em que ano Michael Jackson lançou o álbum Thriller?",
+        alternativaA: "1982",
+        alternativaB: "1990",
+        alternativaC: "1979",
+        alternativaD: "1987",
+        alternativaCorreta: "alternativaA"
+    },
+
+    {
+        pergunta: "Como Michael Jackson era conhecido mundialmente?",
+        alternativaA: "Rei do Rock",
+        alternativaB: "Rei da Música",
+        alternativaC: "Rei do Pop",
+        alternativaD: "Príncipe do Pop",
+        alternativaCorreta: "alternativaC"
+    },
+
+    {
+        pergunta: "Qual música possui o famoso passo Moonwalk em apresentações?",
+        alternativaA: "Smooth Criminal",
+        alternativaB: "Beat It",
+        alternativaC: "Billie Jean",
+        alternativaD: "Black or White",
+        alternativaCorreta: "alternativaC"
+    },
+
+    {
+        pergunta: "Qual clipe de Michael Jackson ficou conhecido pelos zumbis dançando?",
+        alternativaA: "Beat It",
+        alternativaB: "Thriller",
+        alternativaC: "Human Nature",
+        alternativaD: "Bad",
+        alternativaCorreta: "alternativaB"
+    },
+
+    {
+        pergunta: "Qual era o nome do rancho de Michael Jackson?",
+        alternativaA: "Dream Land",
+        alternativaB: "Wonder Park",
+        alternativaC: "Neverland",
+        alternativaD: "Magic Place",
+        alternativaCorreta: "alternativaC"
+    },
+
+    {
+        pergunta: "Quantos irmãos Michael Jackson tinha no grupo Jackson Five?",
+        alternativaA: "2",
+        alternativaB: "4",
+        alternativaC: "6",
+        alternativaD: "8",
+        alternativaCorreta: "alternativaB"
+    },
+
+    {
+        pergunta: "Qual música começa com a frase 'Annie, are you okay?'",
+        alternativaA: "Beat It",
+        alternativaB: "Dangerous",
+        alternativaC: "Smooth Criminal",
+        alternativaD: "Remember The Time",
+        alternativaCorreta: "alternativaC"
+    }
+
+];
 
     // variáveis globais    
     let numeroDaQuestaoAtual = 0
@@ -284,6 +347,15 @@
         btnSubmeter.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
+
+        // salvar dados para puxar no cadastro
+         localStorage.setItem('quiz_resultado', JSON.stringify({
+        pontuacao: pontuacaoFinal,
+        total: quantidadeDeQuestoes,
+        percentual: Math.round((pontuacaoFinal / quantidadeDeQuestoes) * 100),
+        certas: certas,
+        erradas: erradas
+    }))
 
     }
 </script>
