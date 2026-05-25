@@ -85,10 +85,10 @@ background-color: #000000;
 
 .footer{
     width: 100%;
-    background-color: #09101f;
+    background-color: #101319;
     color: white;
     padding: 40px 0 15px;
-    border-top: 2px solid rgb(44, 92, 252);
+    border-top: 2px solid rgb(250, 216, 64);
 }
 
 .footer-container{
@@ -107,7 +107,7 @@ background-color: #000000;
 
 .divisao h3{
     margin-bottom: 15px;
-    color: rgb(44, 92, 252);
+    color:#D4AF37;
 }
 
 .divisao p{
@@ -127,7 +127,7 @@ background-color: #000000;
 .footer-direitos{
     margin-top: 30px;
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255, 208, 0, 0);
     padding-top: 15px;
     font-size: 14px;
 }
