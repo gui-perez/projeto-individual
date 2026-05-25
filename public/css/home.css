@@ -177,17 +177,17 @@ background-color: #000000;
 
 
 
-.inicio {
+.boxLinha {
     display: flex; 
     align-items: center; 
     gap: 16px; 
     margin-bottom: 20px;
   }
-  .inicio .linha { 
+  .boxLinha .linha { 
     height: 4px; 
     width: 60px; 
     background: #D4AF37; }
-  .inicio span {
+  .boxLinha span {
     font-size: 15px;
     letter-spacing: 4px;
     color: #D4AF37; 
@@ -214,7 +214,61 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
+.quizBox{
+  display: flex;
+  flex-wrap: wrap; 
+  padding: 40px;
+  background-image:
+  linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+  url("../assets/img/fundoBloco.png") ;
+  background-size: cover;       
+  background-position: center;  
+  margin-top: 3px;
+  height: 100%;
+}
 
+.conteudoQuiz1{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.conteudoQuiz1 .titulo{
+  font-family: 'Playfair Display', serif;
+  color:#D4AF37;
+}
+
+.conteudoQuiz2{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 30px;
+}
+.conteudoQuiz2 p{
+  color: white;
+  font-size: xx-large;
+  font-family: 'Playfair Display', serif;
+}
+.botaoquiz{
+    display: flex;
+    padding: 10px 20px;
+    background-color:#D4AF37;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+}
+.botaoquiz:hover{
+    transform: scale(1.05);
+}
+
+
+.quizBox {
+    border-top: 15px solid rgb(250, 216, 64);
+    margin-top: 20px;
+}
 
 
 
@@ -227,17 +281,23 @@ font-family: 'Montserrat', sans-serif;
   linear-gradient( rgba(0,0,0,0.89), rgba(0,0,0,0.89)),
   url("../assets/img/fundoBloco.png") ;
   background-size: cover;       
-  background-position: center;  
+  background-position: center;
+  margin-top: 3px;
 }
 
 
-.titulo1 {
+.titulo1{
   width: 100%;
   margin-bottom: 20px;
-   font-size: 50px;
-    color: #dcdcdc;
-    display: inline-block;
-   padding-left: 18%;
+  font-size: 50px;
+  font-family: 'Playfair Display', serif;
+  color:#D4AF37;
+  display: inline-block;
+  padding-left: 18%;
+}
+
+.titulo1 h2{
+  font-family: 'Playfair Display', serif;
 }
 
 .conteudo1 {
@@ -294,7 +354,7 @@ font-family: 'Montserrat', sans-serif;
 .botao1 a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4a6cf7;
+    background-color:#D4AF37;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -303,17 +363,8 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .botao1 a:hover {
-    background-color: #2f4ed8;
+    transform: scale(1.05);
 }
-
-
-
-/* adicionar linha entre home e sobre  */
-.sobre {
-    border-top: 15px solid rgb(250, 216, 64);
-    margin-top: 20px;
-}
-
 
 
 
@@ -339,10 +390,13 @@ font-family: 'Montserrat', sans-serif;
   width: 100%;
   margin-bottom: 20px;
    font-size: 50px;
-    color: #dcdcdc;
+  color:#D4AF37;
     display: flex;
     justify-content: right;
     padding-right: 15%;
+}
+.titulo2 h2{
+  font-family: 'Playfair Display', serif;
 }
 
 
@@ -379,7 +433,7 @@ font-family: 'Montserrat', sans-serif;
 .botao2 a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4a6cf7;
+    background-color:#D4AF37;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -387,7 +441,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .botao2 a:hover {
-    background-color: #2f4ed8;
+    transform: scale(1.05);
 }
 
 
@@ -413,9 +467,12 @@ font-family: 'Montserrat', sans-serif;
   width: 100%;
   margin-bottom: 20px;
    font-size: 50px;
-    color: #dcdcdc;
+    color:#D4AF37;
     display: inline-block;
-   
+}
+
+.titulo3 h2{
+  font-family: 'Playfair Display', serif;
 }
 
 
@@ -453,7 +510,7 @@ font-family: 'Montserrat', sans-serif;
 .botao3 a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4a6cf7;
+    background-color:#D4AF37;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -462,7 +519,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .botao3 a:hover {
-    background-color: #2f4ed8;
+    transform: scale(1.05);
 }
 
 
@@ -503,8 +560,12 @@ border-radius: 20px;
 .titulo4{
   display: flex;
   justify-content: center;
-  color: white;
+  color:#D4AF37;
   font-size: 200%;
+}
+
+.titulo4 h2{
+  font-family: 'Playfair Display', serif;
 }
 
 .conteudo4{
@@ -522,16 +583,16 @@ border-radius: 20px;
 .botao4{
    margin: 30px auto;
   padding: 10px;
-  background-color: #2f4ed8;
+  background-color:#D4AF37;
   width: fit-content;
   display: flex;
   justify-content: center;
   border-radius: 10px;
+  transition: 0.3s;
 }
 
 .botao4:hover{
-  background-color: #182766;
-  transition: 0.3s;
+  transform: scale(1.05);
 }
 
 .botao4 a{
