@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | MJ</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/dash.css">
+    <script src="https://kit.fontawesome.com/d840916580.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="carregar()">
+
+    <div class="header">
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Logo">
+        </div>
+        <div class="barra">
+            <div class="b1"><a href="home.html">Home</a></div>
+        </div>
+    </div>
+
+    <div class="dashboard">
+
+        <div class="container-kpi">
+            <div class="kpi">
+                <div>
+                    <strong>fase mais popular</strong>
+                    <span id="kpiFasePopular">-</span>
+                    <div class="kpi-ancoragem"><strong id="kpiFaseVotos">-</strong></div>
+                </div>
+            </div>
+            <div class="kpi">
+                <div>
+                    <strong>total de acertos</strong>
+                    <span id="kpiTotalAcertos">-</span>
+                    <div class="kpi-ancoragem"><strong>no quiz</strong></div>
+                </div>
+            </div>
+            <div class="kpi">
+                <div>
+                    <strong>total de erros</strong>
+                    <span id="kpiTotalErros">-</span>
+                    <div class="kpi-ancoragem"><strong>no quiz</strong></div>
+                </div>
+            </div>
+            <div class="kpi">
+                <div>
+                    <strong>pontuação média</strong>
+                    <span id="kpiPontuacaoMedia">-</span>
+                    <div class="kpi-ancoragem"><strong>de 100 pontos</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <h1>Dashboard</h1>
+
+        <div class="container-graficos">
+            <div class="grafico">
+                <canvas id="graficoMusica"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="graficoFase"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="graficoClipe"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="graficoNivelFa"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var coresDourado = ['#4E79A7', '#F28E2B', '#59A14F', '#E15759', '#B07AA1', '#7A5F08'];
+
+        function carregar() {
+            buscarKpis();
+            buscarGraficoMusicas();
+            buscarGraficoFases();
+            buscarGraficoClipes();
+            buscarGraficoNiveis();
+        }
+
+        // ── KPIs ──────────────────────────────────────────────
+
+        function buscarKpis() {
+
+            fetch("/dashboard/kpi/fase-popular", { cache: 'no-store' })
+                .then(function (res) {
+                    if (res.ok) {
+                        res.json().then(function (dados) {
+                            document.getElementById('kpiFasePopular').innerHTML = dados[0].nome;
+                            document.getElementById('kpiFaseVotos').innerHTML = dados[0].votos + ' votos';
+                        });
+                    } else {
+                        console.error("Erro ao buscar KPI fase popular.");
+                    }
+                })
+                .catch(function (erro) { console.error("Erro KPI fase popular: " + erro.message); });
+
+            fetch("/dashboard/kpi/total-acertos", { cache: 'no-store' })
+                .then(function (res) {
+                    if (res.ok) {
+                        res.json().then(function (dados) {
+                            document.getElementById('kpiTotalAcertos').innerHTML = dados[0].totalAcertos ?? 0;
+                        });
+                    } else {
+                        console.error("Erro ao buscar KPI total acertos.");
+                    }
+                })
+                .catch(function (erro) { console.error("Erro KPI acertos: " + erro.message); });
+
+            fetch("/dashboard/kpi/total-erros", { cache: 'no-store' })
+                .then(function (res) {
+                    if (res.ok) {
+                        res.json().then(function (dados) {
+                            document.getElementById('kpiTotalErros').innerHTML = dados[0].totalErros ?? 0;
+                        });
+                    } else {
+                        console.error("Erro ao buscar KPI total erros.");
+                    }
+                })
+                .catch(function (erro) { console.error("Erro KPI erros: " + erro.message); });
+
+            fetch("/dashboard/kpi/pontuacao-media", { cache: 'no-store' })
+                .then(function (res) {
+                    if (res.ok) {
+                        res.json().then(function (dados) {
+                            document.getElementById('kpiPontuacaoMedia').innerHTML = dados[0].pontuacaoMedia ?? 0;
+                        });
+                    } else {
+                        console.error("Erro ao buscar KPI pontuação média.");
+                    }
+                })
+                .catch(function (erro) { console.error("Erro KPI pontuação: " + erro.message); });
+        }
+
+        // ── GRÁFICOS ──────────────────────────────────────────
+
+        function buscarGraficoMusicas() {
+            fetch("/dashboard/grafico/musicas", { cache: 'no-store' })
+                .then(function (res) {
+                    if (!res.ok) { console.error('Erro ao buscar gráfico de músicas.'); return; }
+                    res.json().then(function (dados) {
+                        var labels = [], votos = [];
+                        for (var i = 0; i < dados.length; i++) {
+                            labels.push(dados[i].nome);
+                            votos.push(dados[i].votos);
+                        }
+                        new Chart(document.getElementById('graficoMusica'), {
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Quantidade de votos',
+                                    data: votos,
+                                    backgroundColor: '#D4AF37',
+                                    borderColor: '#FFFFFF',
+                                    borderWidth: 2,
+                                    borderRadius: 6
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: { display: true, text: 'Música favorita', color: '#ffffff', font: { size: 16 } },
+                                    legend: { labels: { color: '#ffffff' } }
+                                },
+                                scales: {
+                                    x: {
+                                        title: { display: true, text: 'Música', color: '#D4AF37', font: { size: 14 } },
+                                        ticks: { color: '#ffffff', font: { size: 12 } },
+                                        grid: { color: 'rgba(255,255,255,0.05)' }
+                                    },
+                                    y: {
+                                        title: { display: true, text: 'Votos', color: '#D4AF37', font: { size: 14 } },
+                                        beginAtZero: true,
+                                        ticks: { color: '#ffffff' },
+                                        grid: { color: 'rgba(255,255,255,0.05)' }
+                                    }
+                                }
+                            }
+                        });
+                    });
+                })
+                .catch(function (erro) { console.error("Erro gráfico músicas: " + erro.message); });
+        }
+
+        function buscarGraficoFases() {
+            fetch("/dashboard/grafico/fases", { cache: 'no-store' })
+                .then(function (res) {
+                    if (!res.ok) { console.error('Erro ao buscar gráfico de fases.'); return; }
+                    res.json().then(function (dados) {
+                        var labels = [], votos = [];
+                        for (var i = 0; i < dados.length; i++) {
+                            labels.push(dados[i].nome);
+                            votos.push(dados[i].votos);
+                        }
+                        new Chart(document.getElementById('graficoFase'), {
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Quantidade de votos',
+                                    data: votos,
+                                    backgroundColor: coresDourado,
+                                    borderColor: '#000000',
+                                    borderWidth: 2,
+                                    borderRadius: 6
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: { display: true, text: 'Fase favorita', color: '#ffffff', font: { size: 16 } },
+                                    legend: { labels: { color: '#ffffff' } }
+                                },
+                                scales: {
+                                    x: {
+                                        title: { display: true, text: 'Fase', color: '#D4AF37', font: { size: 14 } },
+                                        ticks: { color: '#ffffff', font: { size: 12 } },
+                                        grid: { color: 'rgba(255,255,255,0.05)' }
+                                    },
+                                    y: {
+                                        title: { display: true, text: 'Votos', color: '#D4AF37', font: { size: 14 } },
+                                        beginAtZero: true,
+                                        ticks: { color: '#ffffff' },
+                                        grid: { color: 'rgba(255,255,255,0.05)' }
+                                    }
+                                }
+                            }
+                        });
+                    });
+                })
+                .catch(function (erro) { console.error("Erro gráfico fases: " + erro.message); });
+        }
+
+        function buscarGraficoClipes() {
+            fetch("/dashboard/grafico/clipes", { cache: 'no-store' })
+                .then(function (res) {
+                    if (!res.ok) { console.error('Erro ao buscar gráfico de clipes.'); return; }
+                    res.json().then(function (dados) {
+                        var labels = [], votos = [];
+                        for (var i = 0; i < dados.length; i++) {
+                            labels.push(dados[i].nome);
+                            votos.push(dados[i].votos);
+                        }
+                        new Chart(document.getElementById('graficoClipe'), {
+                            type: 'doughnut',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Quantidade de votos',
+                                    data: votos,
+                                    backgroundColor: coresDourado,
+                                    borderColor: '#0a0a0a',
+                                    borderWidth: 3
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: { display: true, text: 'Clipe favorito', color: '#ffffff', font: { size: 16 } },
+                                    legend: { labels: { color: '#ffffff' } }
+                                }
+                            }
+                        });
+                    });
+                })
+                .catch(function (erro) { console.error("Erro gráfico clipes: " + erro.message); });
+        }
+
+        function buscarGraficoNiveis() {
+            fetch("/dashboard/grafico/niveis", { cache: 'no-store' })
+                .then(function (res) {
+                    if (!res.ok) { console.error('Erro ao buscar gráfico de níveis.'); return; }
+                    res.json().then(function (dados) {
+                        var labels = [], quantidades = [];
+                        for (var i = 0; i < dados.length; i++) {
+                            labels.push(dados[i].nome);
+                            quantidades.push(dados[i].quantidade);
+                        }
+                        new Chart(document.getElementById('graficoNivelFa'), {
+                            type: 'line',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Quantidade de fãs',
+                                    data: quantidades,
+                                    borderColor: '#D4AF37',
+                                    borderWidth: 3,
+                                    backgroundColor: 'rgba(212, 175, 55, 0.15)',
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointBackgroundColor: '#D4AF37',
+                                    pointRadius: 5
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: { display: true, text: 'Distribuição por nível de fã', color: '#ffffff', font: { size: 16 } },
+                                    legend: { labels: { color: '#ffffff' } }
+                                },
+                                scales: {
+                                    x: {
+                                        title: { display: true, text: 'Nível', color: '#D4AF37', font: { size: 14 } },
+                                        ticks: { color: '#ffffff', font: { size: 12 } },
+                                        grid: { color: 'rgba(255,255,255,0.05)' }
+                                    },
+                                    y: {
+                                        title: { display: true, text: 'Quantidade', color: '#D4AF37', font: { size: 14 } },
+                                        beginAtZero: true,
+                                        ticks: { color: '#ffffff' },
+                                        grid: { color: 'rgba(255,255,255,0.05)' }
+                                    }
+                                }
+                            }
+                        });
+                    });
+                })
+                .catch(function (erro) { console.error("Erro gráfico níveis: " + erro.message); });
+        }
+
+    </script>
+</body>
+
+</html>
