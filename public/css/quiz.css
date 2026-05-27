@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* pagina de fundo */
+body {
+  background: #0a0a0a;
+  color: #f0e6c8;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+
+#pontuacaoEJogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+
+/* estrutura dentro do quiz */
+.flex-colunar { 
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+.width-fit-content { 
+    width: fit-content; 
+}
+
+.padding-8 { 
+    padding: 12px 16px; 
+}
+
+
+/* botao iniciar do quiz */
+#btnIniciarQuiz {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #0a0a0a;
+  background: #c9a84c;
+  border: none;
+  padding: 12px 36px;
+  cursor: pointer;
+}
+#btnIniciarQuiz:hover {
+  background: #e8c96a;
+}
+
+/* caixa da pontuação borda */
+.border-primary {
+  width: 100%;
+  border: 1px solid #c9a84c;
+  padding: 16px 20px;
+  border-radius: 2px;
+}
+
+/* caixa do quiz borda */
+.border-secondary {
+  width: 100%;
+  border: 1px solid #5e5d5d;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+
+/* contador de questão */
+#infoQuestao {
+  letter-spacing: 0.08em;
+  color: #9a8a6a;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 10px 16px;
+}
+
+#infoQuestao span span {
+  color: #c9a84c;
+  font-family: 'Cinzel', serif;
+}
+
+
+
+/* opções do quiz estilização */
+.radio {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #c9a84c;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* quando clica na opção */
+.radio:checked {
+  background: radial-gradient(circle, #c9a84c 40%, transparent 41%);
+}
+
+
+/* botoes do quiz */
+#botoes {
+  padding: 16px 20px;
+  gap: 8px;
+}
+#botoes button {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 1px solid #c9a84c;
+  background: transparent;
+  color: #c9a84c;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header{
+    font-family: 'Montserrat', sans-serif;
+    background-color:#000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5%;
+}
+
+.header a{
+     text-decoration: none;
+     color:#ffffff;
+     font-size: 25px;
+}
+
+
+
+.barra {
+    display: flex;
+    gap: 50px; 
+    align-items: center;
+}
+
+
+
+
+
+.b1  a:hover {
+  padding: 8px;
+  border-radius: 30px; 
+  background: #ffffff; 
+  box-shadow: 0 0 40px #ffffff;
+  color:#000000;
+  transition: all 0.3s ease;
+}
+
+
+
+.user{
+padding: 8px;
+border-radius: 30px; 
+border:solid 2px;
+border-color: rgb(250, 216, 64);
+background-color: #000000;
+}
+
+.user:hover {
+    padding: 8px;
+  border-radius: 30px; 
+  background: #ffffff;
+  box-shadow: 0 0 40px rgb(250, 216, 64);
+  transition: all 0.3s ;
+}
+.user:hover a{
+  color:#000000;
+}
+.user a{
+    color:rgb(250, 216, 64);
+}
+
+
+.logo img {
+     width: 30%;
+}
+
