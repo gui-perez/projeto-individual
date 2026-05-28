@@ -85,7 +85,7 @@ background-color: #000000;
 
 .footer{
     width: 100%;
-    background-color: #101319;
+    background-color: #0c0d0f;
     color: white;
     padding: 40px 0 15px;
     border-top: 2px solid rgb(250, 216, 64);
@@ -543,7 +543,7 @@ font-family: 'Montserrat', sans-serif;
   backdrop-filter: blur(200px);
   border-radius: 30px;
   border: 2px solid #ffffff;
-  box-shadow:  0 0 100px #ffffff;
+  box-shadow:  0 0 60px #ffffff;
 }
 
 .box-img4{

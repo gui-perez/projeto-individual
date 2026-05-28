@@ -81,13 +81,16 @@ background-color: #000000;
 }
 
 
-.album{
+
+
+
+.coreografias{
     padding: 30px;
     background-color: rgb(3, 3, 3);
     box-shadow: 0 0 20px rgb(255, 194, 27);
     border: 3px solid rgb(235, 192, 51);
     border-radius: 20px;
-    height: 200px;
+    height: 80vh;
     margin-top: 50px;
     margin-left: 40px;
     margin-right: 40px;
@@ -95,35 +98,66 @@ background-color: #000000;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 300px;
+
 }
 
-.imagem-album{
-    display: flex;
-    justify-content: left;
-    width: 35%;
+.coreografia{
+    margin: 20px;
+    margin-top: 15px;
 }
-.imagem-album img{
-    width: 300px;
-    height: 250px;
-    object-fit: cover;
+
+.info-coreografia{
+    margin-top: 15px;
+}
+
+.info-coreografia h3{
+    color:rgb(235, 192, 51);
+}
+
+.info-coreografia p{
+    color: #ffffff;
+    font-size: larger;
+    margin-top: 15px;
+    padding: 25px;
+    background-color:rgb(0, 0, 0);
     border-radius: 20px;
     border: 3px solid rgb(255, 255, 255);
-    box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 
-.info-album{
- display: flex;
- flex-direction: column;
+.imagem-coreografia1 img{
+    width: 60%;
+    border: 3px solid rgb(235, 192, 51);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(248, 218, 135);
 }
-.info-album h3{
-    font-size: 38px;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    color:#D4AF37;
-}.info-album p{
-    font-size: 18px;
-    color: #ffffff;
+.imagem-coreografia2 img{
+    width: 100%;
+    border: 3px solid rgb(235, 192, 51);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(248, 218, 135);
 }
+
+.imagem-coreografia3 img{
+    width: 100%;
+    border: 3px solid rgb(235, 192, 51);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(248, 218, 135);
+}
+
+.imagem-coreografia4 img{
+    width: 100%;
+    border: 3px solid rgb(235, 192, 51);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(248, 218, 135);
+}
+
+.imagem-coreografia5 img{
+    width: 60%;
+    border: 3px solid rgb(235, 192, 51);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(248, 218, 135);
+}
+
+
 

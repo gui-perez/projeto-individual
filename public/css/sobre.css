@@ -74,91 +74,69 @@ background-color: #000000;
 
 
 body{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(53, 52, 52);
 }
 
-.biografia{
-  padding: 30px;
-  margin: 10%;
-  background-color: rgb(117, 117, 117);
-  border-radius: 30px;
-}
 
+/* BIOGRAFIA E LEGADO */
+
+.biografia,
 .legado{
-  padding: 30px;
-  margin: 10%;
-  background-color:  rgb(117, 117, 117);
-  border-radius: 30px;
-}
-
-.galeria{
-  padding: 30px;
-  margin: 10%;
-  background-color:  rgb(117, 117, 117);
-  border-radius: 30px;
+    padding: 40px;
+    margin: 50px 40px;
+    background-color: rgb(3, 3, 3);
+    border: 3px solid rgb(235, 192, 51);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(255, 194, 27);
 }
 
 .titulo{
-  margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
-.conteudo{
-  display: flex;
-  flex-direction: column;
+.titulo h1{
+    font-size: 50px;
+    color: #D4AF37;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
 }
 
 .cards{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .coluna{
-    padding: 40px;
-    margin: 5px;
-    background-color: rgb(51, 129, 180);
-    border-radius: 15px;
-    width: 300px;
-    height: 100px;
+    width: 250px;
+    min-height: 220px;
+    padding: 25px;
+    background-color: rgb(10, 10, 10);
+    border-radius: 20px;
+    border: 3px solid rgb(235, 192, 51);
+    box-shadow: 0 0 15px rgba(255, 194, 27, 0.6);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: 0.3s;
 }
 
 .coluna:hover{
-    transform: translateY(-8px);
-    transition: 0.3s;
-    box-shadow: 0 0 40px rgb(255, 255, 255);
-} 
-
-.conteudo1{
-  display: flex;
-  flex-direction: column;
+    transform: scale(1.05);
 }
 
-.fotos{
-  background-color: rgb(253, 255, 136);
-  width: 70px;
-  border-radius: 15px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.coluna h2{
+    color: #D4AF37;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
 }
-.figurino{
-  background-color: rgb(253, 255, 136);
-  width: 90px;
-  border-radius: 15px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}.momento{
-  background-color: rgb(253, 255, 136);
-  width: 110px;
-  border-radius: 15px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.coluna p{
+    color: white;
+    font-size: 17px;
+    line-height: 1.5;
 }

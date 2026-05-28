@@ -6,11 +6,10 @@
 
 body{
     background-size: cover;
-    background-color: rgb(144, 161, 161);
+    background-color: rgb(56, 56, 56);
 }
 
 
-/* barra superior */
 .header{
     font-family: 'Montserrat', sans-serif;
     background-color:#000000;
@@ -82,27 +81,82 @@ background-color: #000000;
 
 
 
-
-.conteudo{
-    max-width: 100%;
-    margin: auto;
+.carreira{
     padding: 40px;
+    margin: 50px 40px;
+
+    background-color: rgb(3, 3, 3);
+
+    border: 3px solid rgb(235, 192, 51);
+    border-radius: 20px;
+
+    box-shadow: 0 0 20px rgb(255, 194, 27);
+}
+
+.carreira .titulo{
     display: flex;
     justify-content: center;
+
+    margin-bottom: 40px;
 }
 
-.cards{
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    width: 400px;
-    height: 400px;
+.carreira .titulo h1{
+    font-size: 50px;
+
+    color: #D4AF37;
+
+    font-family: 'Playfair Display', serif;
+
+    text-transform: uppercase;
 }
 
-.car-card{
-    
-    background: white;
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
+.carreira .cards{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
 }
+
+.carreira .coluna{
+    width: 250px;
+
+    min-height: 220px;
+
+    padding: 25px;
+
+    background-color: rgb(10, 10, 10);
+
+    border: 3px solid rgb(235, 192, 51);
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 15px rgba(255, 194, 27, 0.6);
+
+    transition: 0.3s;
+}
+
+.carreira .coluna:hover{
+    transform: scale(1.05);
+}
+
+.carreira .coluna h2{
+    color: #D4AF37;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+    font-family: 'Playfair Display', serif;
+}
+
+.carreira .coluna p{
+    color: white;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+}
+
