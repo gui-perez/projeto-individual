@@ -18,7 +18,7 @@ function cadastrar(nome, email, senha, musica, fase, clipe, nivel, pontuacao, ce
     //  e na ordem de inserção dos dados.
     var sqlUsuario = `
         INSERT INTO usuario (nome, email, senha, fkMusica, fkFase, fkClipe, fkNivel) VALUES 
-        ('${nome}', '${email}', '${senha}', '${musica}', '${fase}', '${clipe}', '${nivel}');
+        ('${nome}', '${email}', '${senha}', ${musica}, ${fase}, ${clipe}, ${nivel});
     `;
     console.log("Executando a instrução SQL: \n" + sqlUsuario);
 

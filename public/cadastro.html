@@ -120,6 +120,13 @@
     // aguardar();
     const quizData = JSON.parse(localStorage.getItem('quiz_resultado'))
 
+    // validando se tem o quiz
+     if (!quizData) {
+        alert("Você precisa fazer o quiz antes de se cadastrar!");
+        window.location = "quiz.html"; // redireciona para o quiz
+        return;
+    }
+
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
@@ -165,6 +172,33 @@
   return false;
 }
 
+        // verificando se tem caracteres especiais
+        var caracteresEspeciais = ['!', '@', '#', '$', '%', '&', '*', '-', '_', '.'];
+        var temEspecial = false;
+
+        for (var i = 0; i < caracteresEspeciais.length; i++) {
+            if (senhaVar.includes(caracteresEspeciais[i])) {
+                temEspecial = true;
+                break;
+            }
+        }
+
+        if (!temEspecial) {
+            alert("A senha deve ter pelo menos um caractere especial: ! @ # $ % & * ( ) - _ + =");
+            return false;
+        }
+
+        // verificando quantidade de caracteres
+            if (senhaVar.length < 8) {
+                alert("A senha deve ter pelo menos 8 caracteres!");
+                return false;
+            }
+        // verificando se tem numero
+            if (!/[0-9]/.test(senhaVar)) {
+                alert("A senha deve ter pelo menos um número!");
+                return false;
+            }
+
     
 
     // Enviando o valor da nova input
@@ -183,17 +217,17 @@
         faseServer: faseVar,
         clipeServer: clipeVar,
         nivelServer: niveVar,
-        pontuacaoServer: quizData ? quizData.pontuacao : null,
-        percentualServer: quizData ? quizData.percentual : null,
-        certasServer: quizData ? quizData.certas : null,
-        erradasServer: quizData ? quizData.erradas : null
+        pontuacaoServer: quizData.pontuacao,
+        percentualServer: quizData.percentual,
+        certasServer: quizData.certas,
+        erradasServer: quizData.erradas
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-        localStorage.removeItem('quiz_resultado') // limpa para o proximo quiz
+        localStorage.removeItem('quiz_resultado') 
          alert("Cadastro realizado com sucesso!");
           setTimeout(() => {
             window.location = "login.html";
